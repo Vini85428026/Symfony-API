@@ -66,14 +66,14 @@ class Beer
      *
      * @ORM\Column(name="created_at", type="datetime", nullable=false)
      */
-    private $createdAt = 'CURRENT_TIMESTAMP';
+    private $createdAt;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="updated_at", type="datetime", nullable=false)
      */
-    private $updatedAt = '0000-00-00 00:00:00';
+    private $updatedAt;
 
     /**
      * @var integer
@@ -87,7 +87,7 @@ class Beer
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
@@ -95,7 +95,7 @@ class Beer
     /**
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->name = $name;
     }
@@ -103,7 +103,7 @@ class Beer
     /**
      * @return string
      */
-    public function getDescription(): string
+    public function getDescription()
     {
         return $this->description;
     }
@@ -111,7 +111,7 @@ class Beer
     /**
      * @param string $description
      */
-    public function setDescription(string $description)
+    public function setDescription($description)
     {
         $this->description = $description;
     }
@@ -119,7 +119,7 @@ class Beer
     /**
      * @return string
      */
-    public function getPrice(): string
+    public function getPrice()
     {
         return $this->price;
     }
@@ -127,7 +127,7 @@ class Beer
     /**
      * @param string $price
      */
-    public function setPrice(string $price)
+    public function setPrice($price)
     {
         $this->price = $price;
     }
@@ -135,7 +135,7 @@ class Beer
     /**
      * @return string
      */
-    public function getSlug(): string
+    public function getSlug()
     {
         return $this->slug;
     }
@@ -143,7 +143,7 @@ class Beer
     /**
      * @param string $slug
      */
-    public function setSlug(string $slug)
+    public function setSlug($slug)
     {
         $this->slug = $slug;
     }
@@ -151,7 +151,7 @@ class Beer
     /**
      * @return string
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->type;
     }
@@ -159,7 +159,7 @@ class Beer
     /**
      * @param string $type
      */
-    public function setType(string $type)
+    public function setType($type)
     {
         $this->type = $type;
     }
@@ -167,7 +167,7 @@ class Beer
     /**
      * @return string
      */
-    public function getAbv(): string
+    public function getAbv()
     {
         return $this->abv;
     }
@@ -175,7 +175,7 @@ class Beer
     /**
      * @param string $abv
      */
-    public function setAbv(string $abv)
+    public function setAbv($abv)
     {
         $this->abv = $abv;
     }
@@ -183,7 +183,7 @@ class Beer
     /**
      * @return string
      */
-    public function getBrewedBy(): string
+    public function getBrewedBy()
     {
         return $this->brewedBy;
     }
@@ -191,7 +191,7 @@ class Beer
     /**
      * @param string $brewedBy
      */
-    public function setBrewedBy(string $brewedBy)
+    public function setBrewedBy($brewedBy)
     {
         $this->brewedBy = $brewedBy;
     }
@@ -199,7 +199,7 @@ class Beer
     /**
      * @return \DateTime
      */
-    public function getCreatedAt(): \DateTime
+    public function getCreatedAt()
     {
         return $this->createdAt;
     }
@@ -207,15 +207,15 @@ class Beer
     /**
      * @param \DateTime $createdAt
      */
-    public function setCreatedAt(\DateTime $createdAt)
+    public function setCreatedAt($createdAt = null)
     {
-        $this->createdAt = $createdAt;
+        $this->createdAt = new \DateTime('now', new \DateTimeZone("America/Sao_Paulo"));
     }
 
     /**
      * @return \DateTime
      */
-    public function getUpdatedAt(): \DateTime
+    public function getUpdatedAt()
     {
         return $this->updatedAt;
     }
@@ -223,15 +223,15 @@ class Beer
     /**
      * @param \DateTime $updatedAt
      */
-    public function setUpdatedAt(\DateTime $updatedAt)
+    public function setUpdatedAt($updatedAt = null)
     {
-        $this->updatedAt = $updatedAt;
+        $this->updatedAt = new \DateTime('now', new \DateTimeZone("America/Sao_Paulo"));
     }
 
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
@@ -239,7 +239,7 @@ class Beer
     /**
      * @param int $id
      */
-    public function setId(int $id)
+    public function setId($id)
     {
         $this->id = $id;
     }
